@@ -3,3 +3,11 @@
 .meta
 
 .library
+
+/temp
+
+\temp
+
+**\temp
+
+**/temp
