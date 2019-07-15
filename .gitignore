@@ -1,8 +1,10 @@
-.json
+**.json
 
-.meta
+**.meta
 
-.library
+**\library
+
+**/library
 
 /temp
 
