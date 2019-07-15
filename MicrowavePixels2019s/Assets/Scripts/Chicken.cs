@@ -65,6 +65,7 @@ public class Chicken : MonoBehaviour
 	//switch direction if something is hit
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		direction = -direction;
+		if (!collision.isTrigger)
+		{ direction = -direction; }
 	}
 }
