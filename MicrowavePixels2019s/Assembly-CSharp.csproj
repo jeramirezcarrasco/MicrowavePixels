@@ -62,8 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BulletMove.cs" />
     <Compile Include="Assets\Scripts\Chicken.cs" />
+    <Compile Include="Assets\Scripts\LineOfSight.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Shooting1.cs" />
+    <Compile Include="Assets\Scripts\Spotlight\LineOfSightVisual.cs" />
+    <Compile Include="Assets\Scripts\TurretAI.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Eric/Desktop/Fononone/jogos/jogos unity 2019/Bored Pixels Jam 2019-07/Microwave Pixels/MicrowavePixels2019s/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
