@@ -25,3 +25,9 @@ Library
 \Library
 
 **Library
+
+MicrowavePixels2019s/[Ll]ibrary/*
+MicrowavePixels2019s/[Tt]emp/*
+MicrowavePixels2019s/[Oo]bj/*
+MicrowavePixels2019s/[Bb]uild/*
+MicrowavePixels2019s/.vs/*
