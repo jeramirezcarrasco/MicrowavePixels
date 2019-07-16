@@ -23,14 +23,17 @@ public class Chicken : MonoBehaviour
 		{
 			initialDirection = 1;
 		}
-		else initialDirection = -1;
+		else
+		{
+			initialDirection = -1;
+			SpriteFlip();
+		}
 		direction = initialDirection;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
     {
-		print(speed);
 		fixedUpdates++;
 		//move
 		if (fixedUpdates % 2 == 0)
@@ -69,26 +72,28 @@ public class Chicken : MonoBehaviour
 	{
 		if (speed > 0)
 		{
-			while (speed > 0+initialSpeed/10f)
-			{
-				speed -= initialSpeed/10f;
-			}
+			speed = 0;
 		}
 		else
 		{
-			while (speed < initialSpeed-initialSpeed/5f)
-			{
-				speed += initialSpeed/5f;
-			}
+			speed = initialSpeed;
 		}
 	}
 
 	//switch direction if something is hit
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (!collision.isTrigger)
+		if (!collision.collider.isTrigger)
 		{
 			direction = -direction;
+			SpriteFlip();
 		}
+	}
+	private void SpriteFlip()
+	{
+		if (!GetComponent<SpriteRenderer>().flipX)
+		{
+			GetComponent<SpriteRenderer>().flipX = true;
+		} else GetComponent<SpriteRenderer>().flipX = false;
 	}
 }
