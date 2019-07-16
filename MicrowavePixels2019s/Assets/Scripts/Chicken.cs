@@ -8,12 +8,14 @@ public class Chicken : MonoBehaviour
 	[SerializeField] int initialDirection = 0;
 	[SerializeField] float eggDelaySec = 5f;
 	[SerializeField] GameObject egg;
+	[SerializeField] float amountOfStopsInAnEggDelay = 1f;
 	private float speed;
 	private int direction;
 	private int eggTimer = 0;
+	private int fixedUpdates = 0;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 		speed = initialSpeed;
 		//decide initial direction
@@ -28,24 +30,34 @@ public class Chicken : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
     {
+		print(speed);
+		fixedUpdates++;
 		//move
-		transform.position += new Vector3(speed * direction, 0, 0);
+		if (fixedUpdates % 2 == 0)
+		{
+			transform.position += new Vector3(speed * direction, 0, 0);
+		}
 		//timers
 		eggTimer++;
 		float timerMax = 300f;
 		float timerSMax = 150f;
+		//set the timer max and timer to stop max to a random variation
 		if (eggTimer >= 240)
 		{
 			timerMax = (eggDelaySec * 50f) - 25f + Random.Range(0f, 51f);
-			timerSMax = (eggDelaySec/2 * 50f) - 25f + Random.Range(0f, 51f);
+		} else if (eggTimer >= 120)
+		{
+			timerSMax = (eggDelaySec / amountOfStopsInAnEggDelay * 50f) - 25f + Random.Range(0f, 51f);
 		}
+		//toggle stop moving
 		if (eggTimer >= timerSMax)
 		{
-			if (Random.value > 0.9)
+			if (Random.value > 0.6)
 			{
 				ToggleStopMoving();
 			}
 		}
+		//lay the egg
 		if (eggTimer >= timerMax)
 		{
 			Instantiate(egg, transform.position, transform.rotation);
@@ -57,15 +69,26 @@ public class Chicken : MonoBehaviour
 	{
 		if (speed > 0)
 		{
-			speed = 0;
+			while (speed > 0+initialSpeed/10f)
+			{
+				speed -= initialSpeed/10f;
+			}
 		}
-		else speed = initialSpeed;
+		else
+		{
+			while (speed < initialSpeed-initialSpeed/5f)
+			{
+				speed += initialSpeed/5f;
+			}
+		}
 	}
 
 	//switch direction if something is hit
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (!collision.isTrigger)
-		{ direction = -direction; }
+		{
+			direction = -direction;
+		}
 	}
 }

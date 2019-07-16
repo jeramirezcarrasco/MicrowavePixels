@@ -477,6 +477,7 @@ MonoBehaviour:
   initialDirection: 0
   eggDelaySec: 5
   egg: {fileID: 1401180563}
+  amountOfStopsInAnEggDelay: 0.5
 --- !u!212 &1020054120
 SpriteRenderer:
   m_ObjectHideFlags: 0
