@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
         //again make sure new poss does not pass the screen
         pos.x = Mathf.Clamp(pos.x, min.x, max.x);
         pos.y = Mathf.Clamp(pos.y, min.y, max.y);
-        //applay new position
+        //apply new position
         transform.position = pos;
 
 
