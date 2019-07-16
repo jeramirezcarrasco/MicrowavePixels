@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: e1eef5b3b36cb534e90483907c00fa56
+guid: 8e1926991ddcaaf44aeb97fc83f08c58
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4483504832982471387
-    second: pixil-frame-0 (1)_0
-  - first:
-      213: 8740631507717350645
-    second: pixil-frame-0 (1)_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,10 +40,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -75,77 +69,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: pixil-frame-0 (1)_0
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 229
-        width: 43
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14f37562fe736424498c06612dd6a57b
-      internalID: 4483504832982471387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixil-frame-0 (1)_1
-      rect:
-        serializedVersion: 2
-        x: 387
-        y: 235
-        width: 62
-        height: 32
-      alignment: 9
-      pivot: {x: 0.2693703, y: 0.5131426}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5c075870d556e14aa6f6ced8edf2d3c
-      internalID: 8740631507717350645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 285dfd3e7d7a86c4ba3978483c6c1148
+    spriteID: 0b0345e19ef3b9b44ac1eaa4ef43ddb2
     internalID: 0
     vertices: []
     indices: 
