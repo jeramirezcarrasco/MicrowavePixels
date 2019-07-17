@@ -106,6 +106,9 @@ public class Controller2D : RaycastController
 
                     collisions.left = directionX == -1;
                     collisions.right = directionX == 1;
+
+                    if (collisions.left) print("colliding left");
+                    if (collisions.right) print("colliding right");
                 }
             }
         }

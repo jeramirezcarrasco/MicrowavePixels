@@ -207,8 +207,8 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 512
-  horizontalRayCount: 4
-  verticalRayCount: 4
+  horizontalRayCount: 16
+  verticalRayCount: 16
   horizontalRaySpacing: 0
   verticalRaySpacing: 0
   boxCollider: {fileID: 0}
