@@ -36,7 +36,6 @@ public class RaycastController : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         //Time.timeScale = 0.2f;
-        CalculateRaySpacing();
         spriteBoundsSize.x = boxCollider.bounds.size.x;
         spriteBoundsSize.y = boxCollider.bounds.size.y;
         boxCollider.size = spriteBoundsSize;
