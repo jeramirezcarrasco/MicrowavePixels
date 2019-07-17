@@ -8,13 +8,12 @@ using UnityEngine.UI;
 
 public class MyPlayer : MonoBehaviour
 {
-
     #region Vars
 
     #region Inspector_Values
-    [Range(1, 50)] public float moveSpeed = 20;
-    [Range(1, 100)] public float jumpPower = 50;
-    [Range(1, 300)] public float fallSpeed = 100;
+    [Range(1, 50)] public float moveSpeed = 10;
+    [Range(1, 100)] public float jumpPower = 15;
+    [Range(1, 300)] public float fallSpeed = 30;
     [Range(1, 100)] public float groundedTraction = 50;
     [Range(1, 100)] public float airialTraction = 20;
     #endregion Inspector_Values
@@ -89,6 +88,11 @@ public class MyPlayer : MonoBehaviour
         DetectJumping();
 
         MovePlayer();
+
+        if (controller.collisions.below) print("grounded");
+        else print("airborne");
+
+        //if (boxCollider.bounds.min.y )
     }
 
     void DetectDirectionalInputs()

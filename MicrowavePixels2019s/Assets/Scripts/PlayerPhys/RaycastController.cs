@@ -36,7 +36,6 @@ public class RaycastController : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         //Time.timeScale = 0.2f;
-        CalculateRaySpacing();
         spriteBoundsSize.x = boxCollider.bounds.size.x;
         spriteBoundsSize.y = boxCollider.bounds.size.y;
         boxCollider.size = spriteBoundsSize;
@@ -61,7 +60,7 @@ public class RaycastController : MonoBehaviour
 		spriteBoundsSize.y = spriteCollider.bounds.size.y;
 		boxCollider.size = spriteBoundsSize;*/
         Bounds bounds = boxCollider.bounds;
-        bounds.Expand(skinWidth * -2);
+        bounds.Expand(skinWidth * -1);
 
         raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
         raycastOrigins.bottomRight = new Vector2(bounds.max.x, bounds.min.y);

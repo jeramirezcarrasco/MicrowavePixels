@@ -126,8 +126,22 @@ public class Controller2D : RaycastController
 
             if (hit)
             {
+                //if (hit.distance < skinWidth / 2)
+                //{
+                //    print("executing code");
+                //    velocity.y = (hit.distance - skinWidth) * directionY;
+                //}
+                //else
+                //{
+                //    print("not executing code");
+                //}
+                //rayLength = hit.distance;
+
                 velocity.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
+
+                print($"velocity.y = {velocity.y}\n" +
+                    $"rayLength = {hit.distance}");
 
                 collisions.normal = hit.normal;
 
@@ -138,6 +152,7 @@ public class Controller2D : RaycastController
 
                 collisions.below = directionY == -1;
                 collisions.above = directionY == 1;
+
             }
         }
 
