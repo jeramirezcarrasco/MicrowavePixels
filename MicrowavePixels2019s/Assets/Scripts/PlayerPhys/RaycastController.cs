@@ -13,7 +13,7 @@ using UnityEngine;
 public class RaycastController : MonoBehaviour
 {
 
-    public LayerMask collisionMask, p1Mask, p2Mask;
+    public LayerMask collisionMask;
 
     public const float skinWidth = 0.015f;
     public int horizontalRayCount = 4;
@@ -23,7 +23,6 @@ public class RaycastController : MonoBehaviour
     [HideInInspector] public float verticalRaySpacing;
 
     [HideInInspector] public BoxCollider2D boxCollider;
-    [HideInInspector] public PolygonCollider2D spriteCollider;
 
     Vector2 standardColliderSize;
 
@@ -36,11 +35,10 @@ public class RaycastController : MonoBehaviour
     public virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        spriteCollider = GetComponent<PolygonCollider2D>();
         //Time.timeScale = 0.2f;
         CalculateRaySpacing();
-        spriteBoundsSize.x = spriteCollider.bounds.size.x;
-        spriteBoundsSize.y = spriteCollider.bounds.size.y;
+        spriteBoundsSize.x = boxCollider.bounds.size.x;
+        spriteBoundsSize.y = boxCollider.bounds.size.y;
         boxCollider.size = spriteBoundsSize;
         standardColliderSize = boxCollider.size;
         CalculateRaySpacing();
