@@ -60,7 +60,7 @@ public class RaycastController : MonoBehaviour
 		spriteBoundsSize.y = spriteCollider.bounds.size.y;
 		boxCollider.size = spriteBoundsSize;*/
         Bounds bounds = boxCollider.bounds;
-        bounds.Expand(skinWidth * -1);
+        bounds.Expand(skinWidth * -2);
 
         raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
         raycastOrigins.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
