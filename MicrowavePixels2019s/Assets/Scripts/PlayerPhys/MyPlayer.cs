@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class MyPlayer : MonoBehaviour
 {
+    public Animator animator;
+
     #region Vars
 
     #region Inspector_Values
@@ -68,6 +70,7 @@ public class MyPlayer : MonoBehaviour
     #endregion Collisions
 
     #endregion Vars
+    float horizontalMove = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +82,10 @@ public class MyPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        animator.SetFloat("Speed", Math.Abs(horizontalMove));
+
         DetectDirectionalInputs();
 
         ColPhysChecks();

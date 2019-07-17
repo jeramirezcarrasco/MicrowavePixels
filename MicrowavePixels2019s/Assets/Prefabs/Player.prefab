@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5026770692234623055}
   - component: {fileID: 5902115500710824451}
   - component: {fileID: 563095896529312360}
+  - component: {fileID: 2056604}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -224,7 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc38eaeeb11ffa479b6bfffbd99c693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  animator: {fileID: 2056604}
+  moveSpeed: 6.7
   jumpPower: 15
   fallSpeed: 30
   groundedTraction: 50
@@ -232,3 +234,22 @@ MonoBehaviour:
   facingLeft: 0
   facingRight: 1
   boxCollider: {fileID: 0}
+--- !u!95 &2056604
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026770692234623053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 668ac94c94fa8bd4492d3979ac496dfd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
