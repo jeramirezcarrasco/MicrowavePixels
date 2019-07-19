@@ -71,10 +71,12 @@ public class MyPlayer : MonoBehaviour
 
     #endregion Vars
     float horizontalMove = 0f;
+    private SpriteRenderer mySpriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -85,6 +87,14 @@ public class MyPlayer : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
         animator.SetFloat("Speed", Math.Abs(horizontalMove));
+        if (horizontalMove < 0)
+        {
+            mySpriteRenderer.flipX = true;
+        }
+        else if (horizontalMove > 0)
+        {
+            mySpriteRenderer.flipX = false;
+        }
 
         DetectDirectionalInputs();
 
