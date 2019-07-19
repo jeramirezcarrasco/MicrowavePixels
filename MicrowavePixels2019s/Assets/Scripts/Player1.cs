@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using System;
 
 [RequireComponent(typeof(Controller2D))]
 
 public class Player1 : MonoBehaviour
 {
+    public Animator animator;
+
     #region Variables
     #region Inspector_Values
     [Range(1, 50)] public float moveSpeed = 20;
@@ -43,13 +45,29 @@ public class Player1 : MonoBehaviour
     #endregion Collisions
     #endregion Variables
 
+    float horizontalMove = 0f;
+    private SpriteRenderer mySpriteRenderer;
+
     void Start()
     {
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
     }
 
     void Update()
     {
+        horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        animator.SetFloat("Speed", Math.Abs(horizontalMove));
+
+        if (horizontalMove < 0)
+        {
+            mySpriteRenderer.flipX = true;
+        }
+        else if (horizontalMove > 0)
+        {
+            mySpriteRenderer.flipX = false;
+        }
+
         DetectDirectionalInputs();
 
         ColPhysChecks();

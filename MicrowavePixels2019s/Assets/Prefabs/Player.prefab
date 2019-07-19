@@ -205,32 +205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c10b8eb79882b42a71a15051c74ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2056604}
   moveSpeed: 20
   jumpPower: 50
   fallSpeed: 100
   groundedTraction: 50
   airialTraction: 20
-  divekicked: 0
-  slideAttacked: 0
-  guarded: 0
-  shotProjectile: 0
-  inPushBack: 0
-  wallSplat: 0
-  stunned: 0
-  continueStun: 0
-  facingLeft: 0
-  facingRight: 1
-  hitWithProjectile: 0
-  inRespawn: 0
-  dead: 0
-  invincible: 0
   boxCollider: {fileID: 0}
-  inUpArea: 0
-  inDownArea: 0
-  inLeftArea: 0
-  inRightArea: 0
-  killSound: {fileID: 0}
-  clingSound: {fileID: 0}
 --- !u!114 &563095896529312360
 MonoBehaviour:
   m_ObjectHideFlags: 0
