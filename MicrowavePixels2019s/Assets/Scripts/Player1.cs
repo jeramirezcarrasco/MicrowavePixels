@@ -59,11 +59,11 @@ public class Player1 : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
         animator.SetFloat("Speed", Math.Abs(horizontalMove));
 
-        if (horizontalMove < 0)
+        if (horizontalMove < -1)
         {
             mySpriteRenderer.flipX = true;
         }
-        else if (horizontalMove > 0)
+        else if (horizontalMove > 1)
         {
             mySpriteRenderer.flipX = false;
         }
