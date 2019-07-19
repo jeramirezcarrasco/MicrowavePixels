@@ -23,42 +23,23 @@ public class RaycastController : MonoBehaviour {
 	[HideInInspector] public BoxCollider2D boxCollider;
 	[HideInInspector] public PolygonCollider2D spriteCollider;
 
-	Vector2 standardColliderSize;
-
 	Vector2 spriteBoundsSize;
 
 	public RaycastOrigins raycastOrigins;
 
-	Collider2D collidedObject;
-
 	public virtual void Start () {
 		boxCollider = GetComponent<BoxCollider2D> ();
 		spriteCollider = GetComponent<PolygonCollider2D> ();
-		//Time.timeScale = 0.2f;
 		CalculateRaySpacing ();
-        //spriteBoundsSize.x = spriteCollider.bounds.size.x;
-        //spriteBoundsSize.y = spriteCollider.bounds.size.y;
         spriteBoundsSize.x = boxCollider.bounds.size.x;
         spriteBoundsSize.y = boxCollider.bounds.size.y;
         boxCollider.size = spriteBoundsSize;
-		standardColliderSize = boxCollider.size;
 		CalculateRaySpacing ();
 	}
 
-	public virtual void Update () {
-		/*if (Player.crouching) {
-			spriteBoundsSize.x = spriteCollider.bounds.size.x;
-			spriteBoundsSize.y = spriteCollider.bounds.size.y;
-			boxCollider.size = spriteBoundsSize;
-		} else
-			boxCollider.size = standardColliderSize;*/
-		//CalculateRaySpacing ();
-	}
+	public virtual void Update () {}
 
 	public void UpdateRaycastOrigins() {
-		/*spriteBoundsSize.x = spriteCollider.bounds.size.x;
-		spriteBoundsSize.y = spriteCollider.bounds.size.y;
-		boxCollider.size = spriteBoundsSize;*/
 		Bounds bounds = boxCollider.bounds;
 		bounds.Expand (skinWidth * -2);
 
@@ -69,9 +50,6 @@ public class RaycastController : MonoBehaviour {
 	}
 
 	public void CalculateRaySpacing() {
-		/*spriteBoundsSize.x = spriteCollider.bounds.size.x;
-		spriteBoundsSize.y = spriteCollider.bounds.size.y;
-		boxCollider.size = spriteBoundsSize;*/
 		Bounds bounds = boxCollider.bounds;
 		bounds.Expand (skinWidth * -2);
 
@@ -80,10 +58,6 @@ public class RaycastController : MonoBehaviour {
 
 		horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
 		verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
-	}
-
-	void OnCollisionEnter2D(Collision2D col) {
-		collidedObject = col.collider;
 	}
 
 	public struct RaycastOrigins {
