@@ -4,8 +4,42 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Insta-kill
+  - PlayerSprite
+  - Ground
+  - Ceiling
+  - Player1
+  - Player2
+  - RespawnUp
+  - RespawnDown
+  - RespawnRight
+  - RespawnLeft
+  - ActiveAreaUp
+  - ActiveAreaDown
+  - ActiveAreaRight
+  - ActiveAreaLeft
+  - P1Score
+  - P2Score
+  - P1Win
+  - P2Win
+  - P1WinButton
+  - P2WinButton
+  - P1WinText
+  - P2WinText
+  - QuitBanner
+  - QuitText
+  - QuitYesButton
+  - QuitNoButton
+  - QuitYesText
+  - QuitNoText
+  - PlayerScore
+  - Quit
+  - Pause
+  - P1Projectile
+  - P2Projectile
+  - P1Config
+  - P2Config
+  - P1Respawn
+  - P2Respawn
   layers:
   - Default
   - TransparentFX
@@ -15,8 +49,8 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Obstacle
+  - Player
+  - Obstacles
   - 
   - 
   - 
@@ -42,4 +76,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: front
+    uniqueID: 2349207293
     locked: 0

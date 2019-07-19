@@ -202,17 +202,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 5026770692234623053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2acb8cd3421693b429ee90545f0a007a, type: 3}
+  m_Script: {fileID: 11500000, guid: 88c10b8eb79882b42a71a15051c74ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 512
-  horizontalRayCount: 16
-  verticalRayCount: 16
-  horizontalRaySpacing: 0
-  verticalRaySpacing: 0
+  moveSpeed: 20
+  jumpPower: 50
+  fallSpeed: 100
+  groundedTraction: 50
+  airialTraction: 20
+  divekicked: 0
+  slideAttacked: 0
+  guarded: 0
+  shotProjectile: 0
+  inPushBack: 0
+  wallSplat: 0
+  stunned: 0
+  continueStun: 0
+  facingLeft: 0
+  facingRight: 1
+  hitWithProjectile: 0
+  inRespawn: 0
+  dead: 0
+  invincible: 0
   boxCollider: {fileID: 0}
+  inUpArea: 0
+  inDownArea: 0
+  inLeftArea: 0
+  inRightArea: 0
+  killSound: {fileID: 0}
+  clingSound: {fileID: 0}
 --- !u!114 &563095896529312360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,18 +240,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 5026770692234623053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cc38eaeeb11ffa479b6bfffbd99c693, type: 3}
+  m_Script: {fileID: 11500000, guid: c08fbc6534b93dc468088b91a22b981c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2056604}
-  moveSpeed: 6.7
-  jumpPower: 15
-  fallSpeed: 30
-  groundedTraction: 50
-  airialTraction: 20
-  facingLeft: 0
-  facingRight: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 512
+  p1Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  p2Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 4
+  verticalRayCount: 4
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
   boxCollider: {fileID: 0}
+  spriteCollider: {fileID: 0}
 --- !u!95 &2056604
 Animator:
   serializedVersion: 3
