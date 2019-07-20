@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 0c3528a508603624a838898466c448c9
   - enabled: 1
+    path: Assets/Scenes/BlokopsTest2.unity
+    guid: 0186d2f15b7fcc343a15499a95495909
+  - enabled: 1
     path: Assets/Scenes/GoalTest1.unity
     guid: e436d6b3961c3a141826375916a4d6fc
   - enabled: 1
-    path: Assets/Scenes/aallen170_debug2.unity
-    guid: 4482b382b5310b34d9319224e265b557
+    path: Assets/Scenes/GoalTest2.unity
+    guid: 86e95fa43fc38ac4bb1d8148089404c6
   - enabled: 1
-    path: Assets/Scenes/aallen170_debug3.unity
-    guid: 5ce583e186b70ee44a90dad1db8b6cb7
+    path: Assets/Scenes/GoalTest3.unity
+    guid: 52c4a4e18cdbc714e9339db948cb2c45
   - enabled: 1
-    path: Assets/Scenes/End.unity
+    path: Assets/Scenes/GoalTestEnd.unity
     guid: 27900eb43aadb424ca74a0efe3a5ddd4
-  - enabled: 1
-    path: Assets/Scenes/BlokopsTest2.unity
-    guid: 0186d2f15b7fcc343a15499a95495909
   m_configObjects: {}
