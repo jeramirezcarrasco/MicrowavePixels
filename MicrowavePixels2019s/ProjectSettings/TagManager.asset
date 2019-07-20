@@ -4,42 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerSprite
   - Ground
-  - Ceiling
-  - Player1
-  - Player2
-  - RespawnUp
-  - RespawnDown
-  - RespawnRight
-  - RespawnLeft
-  - ActiveAreaUp
-  - ActiveAreaDown
-  - ActiveAreaRight
-  - ActiveAreaLeft
-  - P1Score
-  - P2Score
-  - P1Win
-  - P2Win
-  - P1WinButton
-  - P2WinButton
-  - P1WinText
-  - P2WinText
-  - QuitBanner
-  - QuitText
-  - QuitYesButton
-  - QuitNoButton
-  - QuitYesText
-  - QuitNoText
-  - PlayerScore
-  - Quit
-  - Pause
-  - P1Projectile
-  - P2Projectile
-  - P1Config
-  - P2Config
-  - P1Respawn
-  - P2Respawn
+  - Enemy
+  - Insta-kill
+  - Goal
   layers:
   - Default
   - TransparentFX
