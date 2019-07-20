@@ -9,10 +9,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void Options()
-    {
-        SceneManager.LoadScene(2);
-    }
+    //public void Options()
+    //{
+    //    SceneManager.LoadScene(2);
+    //}
 
     public void Quit()
     {

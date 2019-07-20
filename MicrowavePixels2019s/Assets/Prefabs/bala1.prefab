@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 114355157207268946}
   - component: {fileID: 50313377846791528}
   - component: {fileID: 61538903518486732}
+  - component: {fileID: -5053318749209719356}
+  - component: {fileID: 6102955751088263412}
   m_Layer: 0
   m_Name: bala1
   m_TagString: Enemy
@@ -144,3 +146,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &-5053318749209719356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584762383712998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44028ac2747575743a2b0c5ea0d66541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyObjectTimer: 0.1
+  animator: {fileID: 6102955751088263412}
+--- !u!95 &6102955751088263412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584762383712998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 791e8394a72fe0d49926a6611137b130, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
