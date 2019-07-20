@@ -5,7 +5,7 @@ using System;
 
 [RequireComponent(typeof(Controller2D))]
 
-public class Player1 : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Animator animator;
 

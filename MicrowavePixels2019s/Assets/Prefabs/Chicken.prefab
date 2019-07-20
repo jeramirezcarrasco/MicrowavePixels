@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3888078974112780685}
   m_Layer: 10
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Chicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,9 @@ MonoBehaviour:
   eggDelaySec: 5
   egg: {fileID: 6681330904556621036, guid: d279d4ceff015974e8198ad641331a17, type: 3}
   amountOfStopsInAnEggDelay: 0.5
+  turrets: []
+  turretRangeMultiplier: 2
+  caughtEggDelay: 5
 --- !u!61 &3888078974112780673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,4 +149,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 7

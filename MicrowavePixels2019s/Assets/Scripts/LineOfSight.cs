@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LineOfSight : MonoBehaviour {
     
-    public int range;//How far the enemy can see
+    public float range;//How far the enemy can see
     public int Fov; //Field of view(aka the angle the enemy can see)
     [SerializeField]
     Transform lineOfSightEnd; // This will reference a child transform INSIDE the enemy that dictates the lenght of sigh
     Transform player;
     public int CurrFov;
-    public int CurrRange;
+    public float CurrRange;
     
 
     void Start()
