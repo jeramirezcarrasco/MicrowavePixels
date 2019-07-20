@@ -119,7 +119,7 @@ public class Chicken : MonoBehaviour
 	//switch direction if something is hit
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (!collision.collider.isTrigger)
+		if (collision.gameObject.layer == 9)
 		{
 			direction = -direction;
 			SpriteFlip();
