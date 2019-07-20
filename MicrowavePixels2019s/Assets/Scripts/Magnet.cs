@@ -12,9 +12,9 @@ public class Magnet : MonoBehaviour
 	private bool pullingX = false;
 
 	private int ix = 0;
-	[SerializeField] int ixMax = 10;
+	[SerializeField] int ixMax = 4;
 	private int iy = 0;
-	[SerializeField] int iyMax = 10;
+	[SerializeField] int iyMax = 4;
 	private Vector3 translateAmount;
 	private int buttCoolTimer = 0;
 	[SerializeField] float coolTimerLimit = 50;
