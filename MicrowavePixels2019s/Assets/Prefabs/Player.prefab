@@ -207,8 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2056604}
   moveSpeed: 10
-  jumpPower: 30
-  fallSpeed: 50
+  jumpPower: 20
+  fallSpeed: 30
   groundedTraction: 50
   airialTraction: 20
   boxCollider: {fileID: 0}
@@ -227,18 +227,19 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 512
-  p1Mask:
+  eggMask:
     serializedVersion: 2
-    m_Bits: 0
-  p2Mask:
-    serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   horizontalRayCount: 4
   verticalRayCount: 4
   horizontalRaySpacing: 0
   verticalRaySpacing: 0
   boxCollider: {fileID: 0}
   spriteCollider: {fileID: 0}
+  chicken: {fileID: 0}
+  caughtEgg: 0
+  canResetTurretRange: 0
+  eggHit: 0
 --- !u!95 &2056604
 Animator:
   serializedVersion: 3

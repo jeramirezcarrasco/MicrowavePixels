@@ -11,7 +11,7 @@ using UnityEngine;
  */
 public class RaycastController : MonoBehaviour {
 
-	public LayerMask collisionMask, p1Mask, p2Mask;
+	public LayerMask collisionMask, eggMask;
 
 	public const float skinWidth = 0.015f;
 	public int horizontalRayCount = 4;
@@ -27,7 +27,10 @@ public class RaycastController : MonoBehaviour {
 
 	public RaycastOrigins raycastOrigins;
 
-	public virtual void Start () {
+    [HideInInspector] public Chicken chicken;
+    [HideInInspector] public bool caughtEgg = false, canResetTurretRange = false, eggHit, resetEggCount = false;
+
+    public virtual void Start () {
 		boxCollider = GetComponent<BoxCollider2D> ();
 		spriteCollider = GetComponent<PolygonCollider2D> ();
 		CalculateRaySpacing ();
@@ -35,9 +38,10 @@ public class RaycastController : MonoBehaviour {
         spriteBoundsSize.y = boxCollider.bounds.size.y;
         boxCollider.size = spriteBoundsSize;
 		CalculateRaySpacing ();
+        chicken = GameObject.FindGameObjectWithTag("Chicken").GetComponent<Chicken>();
 	}
 
-	public virtual void Update () {}
+	public virtual void Update () { }
 
 	public void UpdateRaycastOrigins() {
 		Bounds bounds = boxCollider.bounds;

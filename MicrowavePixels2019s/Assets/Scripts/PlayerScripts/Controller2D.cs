@@ -9,14 +9,14 @@ using UnityEngine;
  */
 public class Controller2D : RaycastController {
 
-	float maxClimbAngle = 80;
-	float maxDescendAngle = 75;
+    float maxClimbAngle = 80;
+    float maxDescendAngle = 75;
 
-	public CollisionInfo collisions;
+    public CollisionInfo collisions;
 
-	public override void Start() {
+    public override void Start() {
 		base.Start ();
-	}
+    }
 
 	public override void Update() {
 		base.Update ();
@@ -50,22 +50,25 @@ public class Controller2D : RaycastController {
 		float directionX = Mathf.Sign (velocity.x);
 		float rayLength = Mathf.Abs (velocity.x) + skinWidth;
 
-		for (int i = 0; i < horizontalRayCount; i++) {
-			Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight;
-			rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
+        for (int i = 0; i < horizontalRayCount; i++) {
+            Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight;
+            rayOrigin += Vector2.up * (horizontalRaySpacing * i);
+            RaycastHit2D obstacleHit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
+            RaycastHit2D eggHit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, eggMask);
+            this.eggHit = eggHit;
 
-			Debug.DrawRay (rayOrigin, Vector2.right * directionX * rayLength, Color.red);
+            if (this.eggHit) print("egg just got it");
 
-			if (hit) {
+            Debug.DrawRay (rayOrigin, Vector2.right * directionX * rayLength, Color.red);
 
-				if (hit.distance == 0) {
+			if (obstacleHit) {
+				if (obstacleHit.distance == 0) {
 					continue;
 				}
 
-				float slopeAngle = Vector2.Angle (hit.normal, Vector2.up);
+				float slopeAngle = Vector2.Angle (obstacleHit.normal, Vector2.up);
 
-				collisions.normal = hit.normal;
+				collisions.normal = obstacleHit.normal;
 
 				if (i == 0 && slopeAngle <= maxClimbAngle) {
 					if (collisions.descendingSlope) {
@@ -74,7 +77,7 @@ public class Controller2D : RaycastController {
 					}
 					float distanceToSlopeStart = 0;
 					if (slopeAngle != collisions.slopeAngleOld) {
-						distanceToSlopeStart = hit.distance - skinWidth;
+						distanceToSlopeStart = obstacleHit.distance - skinWidth;
 						velocity.x -= distanceToSlopeStart * directionX;
 					}
 					ClimbSlope (ref velocity, slopeAngle);
@@ -82,8 +85,8 @@ public class Controller2D : RaycastController {
 				}
 
 				if (!collisions.climbingSlope || slopeAngle > maxClimbAngle) {
-					velocity.x = (hit.distance - skinWidth) * directionX;
-					rayLength = hit.distance;
+					velocity.x = (obstacleHit.distance - skinWidth) * directionX;
+					rayLength = obstacleHit.distance;
 
 					if (collisions.climbingSlope) {
 						velocity.y = Mathf.Tan (collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs (velocity.x);
@@ -93,7 +96,9 @@ public class Controller2D : RaycastController {
 					collisions.right = directionX == 1;
 				}
 			}
-		}
+
+            TriggerEgg(eggHit);
+        }
 	}
 
 	void VerticalCollisions(ref Vector3 velocity) {
@@ -103,15 +108,19 @@ public class Controller2D : RaycastController {
 		for (int i = 0; i < verticalRayCount; i++) {
 			Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
 			rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
-			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
+			RaycastHit2D obstacleHit = Physics2D.Raycast (rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
+			RaycastHit2D eggHit = Physics2D.Raycast (rayOrigin, Vector2.right * directionY, rayLength, eggMask);
+            this.eggHit = eggHit;
 
-			Debug.DrawRay (rayOrigin, Vector2.up * directionY * rayLength, Color.red);
+            if (this.eggHit) print("egg just got it");
 
-			if (hit) {
-				velocity.y = (hit.distance - skinWidth) * directionY;
-				rayLength = hit.distance;
+            Debug.DrawRay (rayOrigin, Vector2.up * directionY * rayLength, Color.red);
 
-				collisions.normal = hit.normal;
+			if (obstacleHit) {
+                velocity.y = (obstacleHit.distance - skinWidth) * directionY;
+				rayLength = obstacleHit.distance;
+
+				collisions.normal = obstacleHit.normal;
 
 				if (collisions.climbingSlope) {
 					velocity.x = velocity.y / Mathf.Tan (collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign (velocity.x);
@@ -120,7 +129,9 @@ public class Controller2D : RaycastController {
 				collisions.below = directionY == -1;
 				collisions.above = directionY == 1;
 			}
-		}
+
+            TriggerEgg(eggHit);
+        }
 
 		if (collisions.climbingSlope) {
 			float directionX = Mathf.Sign (velocity.x);
@@ -173,6 +184,20 @@ public class Controller2D : RaycastController {
 			}
 		}
 	}
+
+    private void TriggerEgg(RaycastHit2D hit)
+    {
+        if (hit) Destroy(hit.collider.gameObject);
+
+        if (hit && !caughtEgg)
+        {
+            chicken.IncreaseTurretRange();
+            caughtEgg = true;
+            canResetTurretRange = true;
+        }
+
+        if (hit && caughtEgg) resetEggCount = true;
+    }
 
 	public struct CollisionInfo {
 		public bool above, below;
