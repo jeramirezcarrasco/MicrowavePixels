@@ -21,14 +21,13 @@ public class Magnet : MonoBehaviour
 
 	private GameObject player;
 	private Collider2D[] cols = new Collider2D[10];
-	private ContactFilter2D playerFilter;
 	private int currentColliderOverlapCount;
+	[SerializeField] ContactFilter2D playerFilter;
 
 	// Start is called before the first frame update
 	void Start()
     {
 		player = GameObject.FindGameObjectWithTag("Player");
-		playerFilter.layerMask = LayerMask.GetMask("Obstacle");
 		currentColliderOverlapCount = transform.GetChild(0).GetComponent<BoxCollider2D>().OverlapCollider(playerFilter, cols);
 
 		if (pullY)

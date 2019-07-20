@@ -97,7 +97,8 @@ GameObject:
   - component: {fileID: 5902115500710824451}
   - component: {fileID: 563095896529312360}
   - component: {fileID: 2056604}
-  m_Layer: 0
+  - component: {fileID: 1227817959513218879}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -258,3 +259,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1227817959513218879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026770692234623053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d932b7b0aa7c6ac4982c24c0f96d0113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLife: 100
+  Damage: 10
+  LifeSlider: {fileID: 0}
+  GameOver: {fileID: 0}
+  animator: {fileID: 2056604}
+  invulFrames: 1
