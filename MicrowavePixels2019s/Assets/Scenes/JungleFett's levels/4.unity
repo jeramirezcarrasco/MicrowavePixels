@@ -33466,6 +33466,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5842427094240679669, guid: 6800a441aeb27c0458fa6b03d2b58267,
+        type: 3}
+      propertyPath: obstacleMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5841342101732039082, guid: 6800a441aeb27c0458fa6b03d2b58267,
         type: 3}
       propertyPath: m_Layer
