@@ -34,12 +34,17 @@ public class PlayerLife : MonoBehaviour
             Time.timeScale = 0.00001f;
 
         }
+      
     }
     IEnumerator Invunlenaribility()
     {
+        animator.SetBool("TakeDamage", true);
+        animator.SetBool("TakeDamage", true);
         invul = true;
         yield return new WaitForSeconds(invulFrames);
         invul = false;
+        animator.SetBool("TakeDamage", false);
+
 
     }
 }

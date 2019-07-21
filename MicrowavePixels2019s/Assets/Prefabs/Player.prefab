@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5026770692234623053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.353053, y: -0.69970465, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5026770691468959261}
@@ -241,6 +241,7 @@ MonoBehaviour:
   caughtEgg: 0
   canResetTurretRange: 0
   eggHit: 0
+  resetEggCount: 0
 --- !u!95 &2056604
 Animator:
   serializedVersion: 3

@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyObjectTimer: 0.1
   animator: {fileID: 6102955751088263412}
+  Impact: {fileID: 9108226162855357846, guid: cfc155585b4de714e9e0bf762a8c1210, type: 3}
 --- !u!95 &6102955751088263412
 Animator:
   serializedVersion: 3
