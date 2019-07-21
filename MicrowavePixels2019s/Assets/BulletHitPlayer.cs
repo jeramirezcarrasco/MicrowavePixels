@@ -7,6 +7,7 @@ public class BulletHitPlayer : MonoBehaviour
 {
     public float DestroyObjectTimer;
     public Animator animator;
+    public GameObject Impact;
 
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -15,13 +16,13 @@ public class BulletHitPlayer : MonoBehaviour
         {
             PlayerLife PlayerLife = hitInfo.GetComponent<PlayerLife>();
             PlayerLife.TakeDamageTrigger();
-            animator.SetBool("Explode",true);
-            Destroy(gameObject, DestroyObjectTimer);
+            Instantiate(Impact, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
         else if(hitInfo.gameObject.tag == "Ground")
         {
-            animator.SetBool("Explode", true);
-            Destroy(gameObject, DestroyObjectTimer);
+            Instantiate(Impact, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
     }
