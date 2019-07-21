@@ -183,6 +183,7 @@ MonoBehaviour:
   Maxspeed: 3
   DownView: 2
   Acceleration: 0.1
+  onAlert: 0
   AlertViewRange: 20
   GroundDetection1: {fileID: 5842427093178609970}
   GroundDetection2: {fileID: 5842427093904674417}
@@ -336,6 +337,10 @@ PrefabInstance:
     - target: {fileID: 1378571107246586, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
       propertyPath: m_Name
       value: Plane
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378571107246586, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4782043246078056, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
       propertyPath: m_LocalPosition.x

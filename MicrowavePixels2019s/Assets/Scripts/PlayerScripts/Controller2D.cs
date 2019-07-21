@@ -57,8 +57,6 @@ public class Controller2D : RaycastController {
             RaycastHit2D eggHit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, eggMask);
             this.eggHit = eggHit;
 
-            if (this.eggHit) print("egg just got it");
-
             Debug.DrawRay (rayOrigin, Vector2.right * directionX * rayLength, Color.red);
 
 			if (obstacleHit) {
@@ -111,8 +109,6 @@ public class Controller2D : RaycastController {
 			RaycastHit2D obstacleHit = Physics2D.Raycast (rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
 			RaycastHit2D eggHit = Physics2D.Raycast (rayOrigin, Vector2.right * directionY, rayLength, eggMask);
             this.eggHit = eggHit;
-
-            if (this.eggHit) print("egg just got it");
 
             Debug.DrawRay (rayOrigin, Vector2.up * directionY * rayLength, Color.red);
 
@@ -192,6 +188,10 @@ public class Controller2D : RaycastController {
         if (hit && !caughtEgg)
         {
             chicken.IncreaseTurretRange();
+            foreach (GameObject enemy in enemies)
+            {
+                enemy.GetComponent<EnemyAI_1>().onAlert = true;
+            }
             caughtEgg = true;
             canResetTurretRange = true;
         }
