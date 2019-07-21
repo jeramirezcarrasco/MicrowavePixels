@@ -39,6 +39,7 @@ public class PlayerLife : MonoBehaviour
     IEnumerator Invunlenaribility()
     {
         animator.SetBool("TakeDamage", true);
+        animator.SetBool("TakeDamage", true);
         invul = true;
         yield return new WaitForSeconds(invulFrames);
         invul = false;
