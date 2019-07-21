@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3549054e22c875442a13320daa90ea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 512
   Maxspeed: 3
   DownView: 2
   Acceleration: 0.1
