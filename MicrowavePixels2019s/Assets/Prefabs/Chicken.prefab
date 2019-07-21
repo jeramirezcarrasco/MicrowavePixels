@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3888078974112780672}
   - component: {fileID: 3888078974112780673}
   - component: {fileID: 3888078974112780685}
+  - component: {fileID: 4456466673947344289}
   m_Layer: 10
   m_Name: Chicken
   m_TagString: Chicken
@@ -71,9 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -3551287784963028691, guid: 60253d6154c9e3147b0e79176a8bf85b,
-    type: 3}
-  m_Color: {r: 1, g: 0.64699817, b: 0.5896226, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fb853389560ca0b47a3f06cd7b7c7815, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   amountOfStopsInAnEggDelay: 0.5
   turrets: []
   turretRangeMultiplier: 2
-  multiplierDuration: 5
+  eggDuration: 5
 --- !u!61 &3888078974112780673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -116,18 +116,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.025, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.97}
+    pivot: {x: 0.5, y: 1}
+    oldSize: {x: 0.45, y: 0.45}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &3888078974112780685
 Rigidbody2D:
@@ -150,3 +150,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!95 &4456466673947344289
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3888078974112780674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f74d7f969f34dc8448d45e1a5bdaa8da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
