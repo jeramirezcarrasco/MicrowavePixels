@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 563095896529312360}
   - component: {fileID: 2056604}
   - component: {fileID: 1227817959513218879}
+  - component: {fileID: 5035343581931472875}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2056604}
   moveSpeed: 10
-  jumpPower: 20
+  jumpPower: 17
   fallSpeed: 30
   groundedTraction: 50
   airialTraction: 20
@@ -279,3 +280,24 @@ MonoBehaviour:
   GameOver: {fileID: 0}
   animator: {fileID: 2056604}
   invulFrames: 1
+--- !u!50 &5035343581931472875
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026770692234623053}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

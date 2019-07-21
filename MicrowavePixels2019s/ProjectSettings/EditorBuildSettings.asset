@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GoalTest/End.unity
     guid: 27900eb43aadb424ca74a0efe3a5ddd4
+  - enabled: 1
+    path: Assets/Scenes/JungleFett's levels/1.unity
+    guid: 5a985c5219bdfc548843c82650441ff0
+  - enabled: 1
+    path: Assets/Scenes/JungleFett's levels/2.unity
+    guid: cea9d9405692f664391c1d2319a7c83a
+  - enabled: 1
+    path: Assets/Scenes/JungleFett's levels/3.unity
+    guid: e40e63a4ef98f8746ab2da05dc4cf2ad
   m_configObjects: {}

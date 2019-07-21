@@ -33,7 +33,7 @@ public class Chicken : MonoBehaviour
 		{
 			initialDirection = 1;
 		}
-		else
+		else if (initialDirection == 0)
 		{
 			initialDirection = -1;
 			SpriteFlip();

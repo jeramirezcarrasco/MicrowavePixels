@@ -9,7 +9,6 @@ public class Water : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		print("water trigger enter");
 		if (collision.gameObject.tag == "Player")
 		{
 			PlayerLife PlayerLife = collision.GetComponent<PlayerLife>();
@@ -18,16 +17,15 @@ public class Water : MonoBehaviour
 		}
 	}
 
-	//private void OnTriggerStay2D(Collider2D collision)
-	//{
-	//	print("water trigger stay");
-	//	if(collision.gameObject.tag == "Player" && dmgCoolTimer >= dmgCoolMax)
-	//	{
-	//		PlayerLife PlayerLife = collision.GetComponent<PlayerLife>();
-	//		PlayerLife.TakeDamageTrigger();
-	//		dmgCoolTimer = 0;
-	//	}
-	//}
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "Player" && dmgCoolTimer >= dmgCoolMax)
+		{
+			PlayerLife PlayerLife = collision.GetComponent<PlayerLife>();
+			PlayerLife.TakeDamageTrigger();
+			dmgCoolTimer = 0;
+		}
+	}
 
     // Update is called once per frame
     void FixedUpdate()
