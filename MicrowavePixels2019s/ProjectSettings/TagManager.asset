@@ -12,6 +12,7 @@ TagManager:
   - Turret
   - Egg
   - ChickenCollision
+  - Patrol
   layers:
   - Default
   - TransparentFX

@@ -31,7 +31,8 @@ public class Shooting1 : MonoBehaviour
     private void Start()
     {
         
-        Player = GameObject.FindWithTag("Player").transform;
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        print($"Player: {Player}");
         GunOn = false;
     }
 

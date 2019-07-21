@@ -83,40 +83,40 @@ public class Chicken : MonoBehaviour
 
         if (controller.eggHit) print("egg is hit (from chicken)");
 
-        CaughtEgg();
+        //CaughtEgg();
     }
 
-    private void CaughtEgg()
-    {
-        if (controller.caughtEgg)
-        {
-            caughtEggCount += Time.deltaTime;
-            //if (!alertedEnemies)
-            //{
-            //    alertedEnemies = true;
-            //}
-        }
+    //private void CaughtEgg()
+    //{
+    //    if (controller.caughtEgg)
+    //    {
+    //        caughtEggCount += Time.deltaTime;
+    //        //if (!alertedEnemies)
+    //        //{
+    //        //    alertedEnemies = true;
+    //        //}
+    //    }
 
-        if (caughtEggCount >= eggDuration && controller.canResetTurretRange)
-        {
-            print("inside");
-            print($"caughtEggCount before change: {caughtEggCount}");
-            //alertedEnemies = false;
-            caughtEggCount = Mathf.Epsilon;
-            print($"caughtEggCount after change: {caughtEggCount}");
-            foreach (GameObject enemy in controller.enemies) enemy.GetComponent<EnemyAI_1>().onAlert = false;
-            controller.caughtEgg = false;
-            ResetTurretRange();
-            controller.canResetTurretRange = false;
-        }
+    //    if (caughtEggCount >= (eggDuration - 0.1) && controller.canResetTurretRange)
+    //    {
+    //        print("inside");
+    //        print($"caughtEggCount before change: {caughtEggCount}");
+    //        //alertedEnemies = false;
+    //        caughtEggCount = Mathf.Epsilon;
+    //        print($"caughtEggCount after change: {caughtEggCount}");
+    //        foreach (GameObject enemy in controller.enemies) enemy.GetComponent<EnemyAI_1>().onAlert = false;
+    //        controller.caughtEgg = false;
+    //        ResetTurretRange();
+    //        controller.canResetTurretRange = false;
+    //    }
 
-        if (controller.resetEggCount)
-        {
-            print("resetting egg count");
-            controller.resetEggCount = false;
-            caughtEggCount = Mathf.Epsilon;
-        }
-    }
+    //    if (controller.resetEggCount)
+    //    {
+    //        print("resetting egg count");
+    //        controller.resetEggCount = false;
+    //        caughtEggCount = Mathf.Epsilon;
+    //    }
+    //}
 
     private void ToggleStopMoving()
 	{
@@ -147,21 +147,21 @@ public class Chicken : MonoBehaviour
 		} else GetComponent<SpriteRenderer>().flipX = false;
 	}
 
-    public void IncreaseTurretRange()
-    {
-        foreach (GameObject turret in turrets)
-        {
-            turret.GetComponent<LineOfSight>().range *= turretRangeMultiplier;
-            turret.GetComponent<LineOfSightVisual>().viewRadius *= turretRangeMultiplier;
-        }
-    }
+    //public void IncreaseTurretRange()
+    //{
+    //    foreach (GameObject turret in turrets)
+    //    {
+    //        turret.GetComponent<LineOfSight>().range *= turretRangeMultiplier;
+    //        turret.GetComponent<LineOfSightVisual>().viewRadius *= turretRangeMultiplier;
+    //    }
+    //}
 
-    public void ResetTurretRange()
-    {
-        foreach (GameObject turret in turrets)
-        {
-            turret.GetComponent<LineOfSight>().range /= turretRangeMultiplier;
-            turret.GetComponent<LineOfSightVisual>().viewRadius /= turretRangeMultiplier;
-        }
-    }
+    //public void ResetTurretRange()
+    //{
+    //    foreach (GameObject turret in turrets)
+    //    {
+    //        turret.GetComponent<LineOfSight>().range /= turretRangeMultiplier;
+    //        turret.GetComponent<LineOfSightVisual>().viewRadius /= turretRangeMultiplier;
+    //    }
+    //}
 }

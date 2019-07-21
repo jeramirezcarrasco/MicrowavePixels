@@ -187,11 +187,9 @@ public class Controller2D : RaycastController {
 
         if (hit && !caughtEgg)
         {
-            chicken.IncreaseTurretRange();
-            foreach (GameObject enemy in enemies)
-            {
-                enemy.GetComponent<EnemyAI_1>().onAlert = true;
-            }
+            alert.IncreaseTurretRange();
+            foreach (GameObject patrol in patrols)
+                patrol.GetComponent<EnemyAI_1>().onAlert = true;
             caughtEgg = true;
             canResetTurretRange = true;
         }
@@ -199,7 +197,7 @@ public class Controller2D : RaycastController {
         if (hit && caughtEgg) resetEggCount = true;
     }
 
-	public struct CollisionInfo {
+    public struct CollisionInfo {
 		public bool above, below;
 		public bool left, right;
 

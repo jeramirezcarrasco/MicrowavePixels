@@ -20,7 +20,6 @@ public class TurretAI : MonoBehaviour {
         lineOfSightVisual = GetComponent<LineOfSightVisual>();
         lineofsight = GetComponent<LineOfSight>();
         shooting1 = GetComponent<Shooting1>();
-
     }
 
     private void Start()

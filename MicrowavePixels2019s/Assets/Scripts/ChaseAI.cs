@@ -39,7 +39,8 @@ public class ChaseAI : MonoBehaviour {
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), ChaseSpeed * Time.deltaTime);
         }
+        else
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), -ChaseSpeed * Time.deltaTime);
 
-        
     }
 }

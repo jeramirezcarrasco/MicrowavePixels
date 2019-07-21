@@ -11,11 +11,13 @@ public class LineOfSight : MonoBehaviour {
     Transform player;
     public int CurrFov;
     public float CurrRange;
-    
 
+    BoxCollider2D baseCol;
+    
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        baseCol = GetComponentInParent<BoxCollider2D>();
         CurrFov = Fov;
         CurrRange = range;
     }
@@ -23,13 +25,16 @@ public class LineOfSight : MonoBehaviour {
     public bool Spoted()
     {
         if (Vector2.Distance(player.position, transform.position) < CurrRange) //If the enemy are close
+        {
             if (PlayerInFieldOfView()) //If the player is in the enemy FoV
+            {
                 if (!PlayerHiddenByObstacles())//If there is no obstacle betweent he player and the enemy
                 {
                     //Debug.Log("Spoted");
                     return true;
-
                 }
+            }
+        }
         return false;
     }
 

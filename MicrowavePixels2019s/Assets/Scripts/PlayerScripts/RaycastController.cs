@@ -27,8 +27,8 @@ public class RaycastController : MonoBehaviour {
 
 	public RaycastOrigins raycastOrigins;
 
-    [HideInInspector] public Chicken chicken;
-    [HideInInspector] public GameObject[] enemies;
+    [HideInInspector] public Alert alert;
+    [HideInInspector] public GameObject[] patrols;
     [HideInInspector] public bool caughtEgg = false, canResetTurretRange = false, eggHit, resetEggCount = false;
 
     public virtual void Start () {
@@ -39,8 +39,8 @@ public class RaycastController : MonoBehaviour {
         spriteBoundsSize.y = boxCollider.bounds.size.y;
         boxCollider.size = spriteBoundsSize;
 		CalculateRaySpacing ();
-        chicken = GameObject.FindGameObjectWithTag("Chicken").GetComponent<Chicken>();
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        alert = GetComponent<Alert>();
+        patrols = GameObject.FindGameObjectsWithTag("Patrol");
 	}
 
 	public virtual void Update () { }
