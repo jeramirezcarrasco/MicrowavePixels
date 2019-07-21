@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 45396944497439592}
   - component: {fileID: 45396944497439595}
   - component: {fileID: 490801327947050521}
-  - component: {fileID: 831170651143739439}
+  - component: {fileID: 7670561975871854776}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 45396944497439598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &831170651143739439
+--- !u!61 &7670561975871854776
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,5 +117,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.85}
+  m_Size: {x: 0.36, y: 0.68}
   m_EdgeRadius: 0
