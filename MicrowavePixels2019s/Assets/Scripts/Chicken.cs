@@ -17,10 +17,12 @@ public class Chicken : MonoBehaviour
     [HideInInspector] public GameObject[] turrets;
 
     [Range(1, 5)] public float turretRangeMultiplier = 2;
-    [Range(1, 20)] public int multiplierDuration = 5;
+    [Range(1, 20)] public int eggDuration = 5;
 
     Controller2D controller;
     private float caughtEggCount;
+
+    //private bool alertedEnemies = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,6 @@ public class Chicken : MonoBehaviour
 		direction = initialDirection;
 
         turrets = GameObject.FindGameObjectsWithTag("Turret");
-
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller2D>();
     }
 
@@ -87,18 +88,31 @@ public class Chicken : MonoBehaviour
 
     private void CaughtEgg()
     {
-        if (controller.caughtEgg) caughtEggCount += Time.deltaTime;
-
-        if (caughtEggCount >= multiplierDuration && controller.canResetTurretRange)
+        if (controller.caughtEgg)
         {
+            caughtEggCount += Time.deltaTime;
+            //if (!alertedEnemies)
+            //{
+            //    alertedEnemies = true;
+            //}
+        }
+
+        if (caughtEggCount >= eggDuration && controller.canResetTurretRange)
+        {
+            print("inside");
+            print($"caughtEggCount before change: {caughtEggCount}");
+            //alertedEnemies = false;
+            caughtEggCount = Mathf.Epsilon;
+            print($"caughtEggCount after change: {caughtEggCount}");
+            foreach (GameObject enemy in controller.enemies) enemy.GetComponent<EnemyAI_1>().onAlert = false;
             controller.caughtEgg = false;
             ResetTurretRange();
             controller.canResetTurretRange = false;
-            caughtEggCount = Mathf.Epsilon;
         }
 
         if (controller.resetEggCount)
         {
+            print("resetting egg count");
             controller.resetEggCount = false;
             caughtEggCount = Mathf.Epsilon;
         }

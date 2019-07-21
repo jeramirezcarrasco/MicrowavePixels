@@ -11,6 +11,8 @@ public class EnemyAI_1 : MonoBehaviour
     float Speed;
     public float Acceleration;
 
+    [HideInInspector] public bool onAlert = false;
+
     private bool MovRight = true, hitWall = false;
     public int AlertViewRange;
 
@@ -21,6 +23,8 @@ public class EnemyAI_1 : MonoBehaviour
     private ChaseAI chaseAI;
     private LineOfSightVisual lineOfSightVisual;
     private SpriteRenderer mySpriteRenderer;
+
+    Transform playerTrans;
 
     private void Awake()
     {
@@ -33,11 +37,12 @@ public class EnemyAI_1 : MonoBehaviour
     private void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         float Speed = Maxspeed;
     }
     void Update()
     {
-        if (!lineofsight.Spoted())
+        if (!lineofsight.Spoted() && !onAlert)
         {
             lineOfSightVisual.DrawFieldOfView();
             lineofsight.CurrFov = lineofsight.Fov;
@@ -45,8 +50,9 @@ public class EnemyAI_1 : MonoBehaviour
             shooting1.endShooting();
             Patrol();
         }
-        else if (lineofsight.Spoted())
+        else if (lineofsight.Spoted() || onAlert)
         {
+            MovRight = playerTrans.position.x > transform.position.x;
             lineOfSightVisual.viewMesh.Clear();
             lineOfSightVisual.viewMesh.Clear();
             lineofsight.CurrRange = AlertViewRange;
@@ -55,7 +61,8 @@ public class EnemyAI_1 : MonoBehaviour
             shooting1.Point();
             chaseAI.Follow();
         }
-            
+
+        DetectWall();
     }
 
     void Patrol()
@@ -63,8 +70,6 @@ public class EnemyAI_1 : MonoBehaviour
         transform.Translate(Vector2.right * Speed * Time.deltaTime);
         RaycastHit2D groundSlowDown = Physics2D.Raycast(GroundDetection2.position, Vector2.down, DownView);
         RaycastHit2D ground = Physics2D.Raycast(GroundDetection1.position, Vector2.down, DownView);
-
-        DetectWall();
 
         if (groundSlowDown.collider == false)
         {
@@ -82,6 +87,7 @@ public class EnemyAI_1 : MonoBehaviour
         }
         if (ground.collider == false || hitWall)
         {
+            hitWall = false;
             if (MovRight)
             {
                 transform.eulerAngles = new Vector3(0, 0, 180);
@@ -104,9 +110,9 @@ public class EnemyAI_1 : MonoBehaviour
         RaycastHit2D wallHit = Physics2D.Raycast (
             new Vector2 (
                 MovRight ?
-                    GetComponent<BoxCollider2D>().bounds.max.x
+                    GetComponent<BoxCollider2D>().bounds.max.x - 0.05f
                 :
-                    GetComponent<BoxCollider2D>().bounds.min.x,
+                    GetComponent<BoxCollider2D>().bounds.min.x + 0.05f,
                 GetComponent<BoxCollider2D>().bounds.center.y
             ),
             MovRight ? Vector2.right : Vector2.left,
@@ -116,8 +122,7 @@ public class EnemyAI_1 : MonoBehaviour
 
         if (wallHit)
         {
-            if (wallHit.distance == 0) hitWall = true;
-            else hitWall = false;
+            if (wallHit.distance <= 0.05f) hitWall = true;
         }
     }
 
