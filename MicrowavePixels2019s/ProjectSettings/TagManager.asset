@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - Insta-kill
   - Goal
+  - Chicken
+  - Turret
+  - Egg
+  - ChickenCollision
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,7 @@ TagManager:
   - Obstacles
   - Chicken
   - Egg
-  - 
+  - ChickenCollision
   - 
   - 
   - 

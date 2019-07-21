@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -3551287784963028691, guid: 60253d6154c9e3147b0e79176a8bf85b,
     type: 3}
   m_Color: {r: 1, g: 0.64699817, b: 0.5896226, a: 1}
@@ -102,7 +102,7 @@ MonoBehaviour:
   amountOfStopsInAnEggDelay: 0.5
   turrets: []
   turretRangeMultiplier: 2
-  caughtEggDelay: 5
+  multiplierDuration: 5
 --- !u!61 &3888078974112780673
 BoxCollider2D:
   m_ObjectHideFlags: 0
