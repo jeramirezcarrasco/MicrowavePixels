@@ -9,6 +9,8 @@ public class laserScript : MonoBehaviour
     public float OnDuration;
     public float OffDuration;
     private Animator animator;
+    public int SetDamage;
+    public bool UseSetDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,15 @@ public class laserScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerLife PlayerLife = collision.GetComponent<PlayerLife>();
-            PlayerLife.TakeDamageTrigger();
+
+            if (UseSetDamage)
+            {
+                PlayerLife.TakeDamageTrigger(SetDamage);
+            }
+            else
+            {
+                PlayerLife.TakeDamageTrigger();
+            }
         }
     }
 }

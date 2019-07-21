@@ -22,6 +22,15 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    public void TakeDamageTrigger(int damage)
+    {
+        if (!invul)
+        {
+            StartCoroutine(Invunlenaribility());
+            StartCoroutine(TakeDamage(damage));
+        }
+    }
+
     IEnumerator TakeDamage()
     {
         MaxLife = MaxLife - Damage;
@@ -36,6 +45,8 @@ public class PlayerLife : MonoBehaviour
         }
       
     }
+
+
     IEnumerator Invunlenaribility()
     {
         animator.SetBool("TakeDamage", true);
@@ -45,6 +56,21 @@ public class PlayerLife : MonoBehaviour
         invul = false;
         animator.SetBool("TakeDamage", false);
 
+
+    }
+
+    IEnumerator TakeDamage(int damage)
+    {
+        MaxLife = MaxLife - damage;
+        LifeSlider.value = MaxLife;
+        if (MaxLife <= 0)
+        {
+            animator.SetBool("GameOver", true);
+            yield return new WaitForSeconds(2);
+            GameOver.SetActive(true);
+            Time.timeScale = 0.00001f;
+
+        }
 
     }
 }
