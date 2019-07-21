@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2056604}
   moveSpeed: 10
-  jumpPower: 20
+  jumpPower: 17
   fallSpeed: 30
   groundedTraction: 50
   airialTraction: 20
