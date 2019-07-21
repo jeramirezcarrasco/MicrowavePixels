@@ -26,7 +26,7 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LandedOnGoal()) LoadNextLevel();
+        if (LandedOnGoal()) /*LoadNextLevel()*/ print("in goal");
     }
 
     private void LoadNextLevel()
