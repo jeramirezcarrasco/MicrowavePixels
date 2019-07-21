@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 5842427094240679668}
   - component: {fileID: 5842427094240679675}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Patrol
   m_TagString: Patrol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,14 +334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5842427094240679666}
     m_Modifications:
-    - target: {fileID: 1378571107246586, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
-      propertyPath: m_Name
-      value: Plane
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378571107246586, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 4782043246078056, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -386,10 +378,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 33146264109916464, guid: 95fe7f9f52c0b54418af534018ebe5e2,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
+    - target: {fileID: 1378571107246586, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
+      propertyPath: m_Name
+      value: Plane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95fe7f9f52c0b54418af534018ebe5e2, type: 3}
