@@ -13,6 +13,7 @@ public class Chicken : MonoBehaviour
 	private int direction;
 	private int eggTimer = 0;
 	private int fixedUpdates = 0;
+	private Animator anim;
 
     [HideInInspector] public GameObject[] turrets;
 
@@ -42,6 +43,7 @@ public class Chicken : MonoBehaviour
 
         turrets = GameObject.FindGameObjectsWithTag("Turret");
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller2D>();
+		anim = GetComponent<Animator>();
     }
 
 	// Update is called once per frame
@@ -123,10 +125,12 @@ public class Chicken : MonoBehaviour
 		if (speed > 0)
 		{
 			speed = 0;
+			anim.SetBool("Walking", false);
 		}
-		else
+		else if (speed != initialSpeed)
 		{
 			speed = initialSpeed;
+			anim.SetBool("Walking", true);
 		}
 	}
 

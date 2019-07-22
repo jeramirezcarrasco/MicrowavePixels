@@ -183,7 +183,7 @@ public class Controller2D : RaycastController {
 
     private void TriggerEgg(RaycastHit2D hit)
     {
-        if (hit) Destroy(hit.collider.gameObject);
+		if (hit) hit.collider.gameObject.GetComponent<Animator>().SetBool("Break",true);
 
         if (hit && !caughtEgg)
         {
