@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JungleFett's levels/3.unity
     guid: e40e63a4ef98f8746ab2da05dc4cf2ad
+  - enabled: 1
+    path: Assets/Scenes/JungleFett's levels/4.unity
+    guid: a0545c5d35885dc4d96ec2ad7a718574
   m_configObjects: {}
