@@ -20,6 +20,10 @@ public class Magnet : MonoBehaviour
 	[SerializeField] float coolTimerLimit = 50;
 
 	private GameObject player;
+	private Player pScript;
+	private float defFall;
+	private float defMove;
+	private Animator buttAnim;
 	private Collider2D[] cols = new Collider2D[10];
 	private int currentColliderOverlapCount;
 	[SerializeField] ContactFilter2D playerFilter;
@@ -27,7 +31,13 @@ public class Magnet : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		buttAnim = transform.GetChild(0).GetComponent<Animator>();
+
 		player = GameObject.FindGameObjectWithTag("Player");
+		pScript = player.GetComponent<Player>();
+		//gets default values for variables
+		defFall = pScript.fallSpeed;
+		defMove = pScript.moveSpeed;
 		currentColliderOverlapCount = transform.GetChild(0).GetComponent<BoxCollider2D>().OverlapCollider(playerFilter, cols);
 
 		if (pullY)
@@ -43,6 +53,18 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		//prevents the player from moving or falling while pulling
+		if ((pullingX && Mathf.Abs(player.transform.position.x - transform.position.x) > 1) ||
+			(pullingY && player.transform.position.y < transform.position.y - 1))
+		{
+			pScript.fallSpeed = 10;
+			pScript.moveSpeed = 0;
+		}
+		else
+		{
+			pScript.fallSpeed = defFall;
+			pScript.moveSpeed = defMove;
+		}
 		//check if the player touches the button
 		int c = transform.GetChild(0).GetComponent<BoxCollider2D>().OverlapCollider(playerFilter, cols);
 
@@ -58,8 +80,9 @@ public class Magnet : MonoBehaviour
 				pullingX = true;
 				buttCoolTimer = 0;
 			}
+			buttAnim.SetTrigger("BttnPressed");
 		}
-    }
+	}
 	private void FixedUpdate()
 	{
 		//button cooldown timer
@@ -90,7 +113,6 @@ public class Magnet : MonoBehaviour
 					pullingY = false;
 				}
 				player.transform.Translate(translateAmount);
-				print(translateAmount);
 				iy++;
 			}
 		}
@@ -108,7 +130,6 @@ public class Magnet : MonoBehaviour
 					pullingX = false;
 				}
 				player.transform.Translate(translateAmount);
-				print(translateAmount);
 				ix++;
 			}
 		}

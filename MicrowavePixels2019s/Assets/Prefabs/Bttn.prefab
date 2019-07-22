@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 2887171360450841261}
   - component: {fileID: 2887171360450841260}
   - component: {fileID: 2887171360450841259}
+  - component: {fileID: 7697261022358081662}
   m_Layer: 9
   m_Name: Bttn
   m_TagString: Untagged
@@ -278,10 +279,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 0.17}
     newSize: {x: 1, y: 0.17}
     adaptiveTilingThreshold: 0.5
@@ -289,7 +290,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.17}
+  m_Size: {x: 0.7600792, y: 0.17}
   m_EdgeRadius: 0
 --- !u!114 &2887171360450841259
 MonoBehaviour:
@@ -306,6 +307,35 @@ MonoBehaviour:
   Wall: {fileID: 2887171359790664461}
   MoveDistance: 200
   acceleration: 1
+--- !u!60 &7697261022358081662
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887171360450841258}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 0.17}
+    newSize: {x: 1, y: 0.17}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3863975, y: 0.073049545}
+      - {x: -0.5064316, y: 0.0048236847}
+      - {x: 0.5080287, y: 0.0016059875}
+      - {x: 0.3884283, y: 0.07299423}
 --- !u!1 &2887171360880170358
 GameObject:
   m_ObjectHideFlags: 0
