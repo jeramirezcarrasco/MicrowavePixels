@@ -138,8 +138,15 @@ public class Magnet : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			pullingX = false;
-			pullingY = false;
+			if(pullingY)
+			{
+				collision.transform.position = new Vector3(transform.position.x, transform.position.y - 0.8f, 0);
+				pullingY = false;
+			}
+			if (pullingX)
+			{
+				pullingX = false;
+			}
 		}
 	}
 }

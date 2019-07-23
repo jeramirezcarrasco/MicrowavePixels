@@ -140,4 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e8d89021903fa4baf5b571250c2686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgCoolMax: 50
+  dmgCoolMax: 25
