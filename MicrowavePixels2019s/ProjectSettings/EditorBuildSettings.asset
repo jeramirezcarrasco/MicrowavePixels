@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/JungleFett's levels/1.unity
     guid: 5a985c5219bdfc548843c82650441ff0
   - enabled: 1
+    path: Assets/Scenes/Stan_GettingConfusedInUnity/lol.unity
+    guid: 38ced18dfd4a64126ad5a3e6ebdf1e92
+  - enabled: 1
     path: Assets/Scenes/JungleFett's levels/2.unity
     guid: cea9d9405692f664391c1d2319a7c83a
   - enabled: 1
@@ -23,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BlokosTestLevel.unity
     guid: 0e2c8dc4cddb12048b74e7dbc6a9c673
+  - enabled: 1
+    path: Assets/Scenes/JungleFett's levels/Credits.unity
+    guid: 1a2bf5c36c7da8344a7e91c92ce8570f
   m_configObjects: {}
