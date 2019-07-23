@@ -12,7 +12,6 @@ public class ScrollCredits : MonoBehaviour
     void FixedUpdate()
     {
 		transform.Translate(new Vector3(0, scrollSpeed, 0));
-		print(GetComponent<RectTransform>().position.y);
 		if (GetComponent<RectTransform>().position.y > yCreditsEnd) SceneManager.LoadScene(0);
     }
 }

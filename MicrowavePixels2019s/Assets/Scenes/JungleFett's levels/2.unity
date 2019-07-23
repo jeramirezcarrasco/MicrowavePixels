@@ -25797,6 +25797,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6717404288401032184, guid: c2e6df53dba1ada46b79860505f970a6,
+        type: 3}
+      propertyPath: pullSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717404288401032184, guid: c2e6df53dba1ada46b79860505f970a6,
+        type: 3}
+      propertyPath: iyMax
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6717404289266518619, guid: c2e6df53dba1ada46b79860505f970a6,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -26157,7 +26167,12 @@ PrefabInstance:
     - target: {fileID: 6717404288401032184, guid: c2e6df53dba1ada46b79860505f970a6,
         type: 3}
       propertyPath: iyMax
-      value: 6
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717404288401032184, guid: c2e6df53dba1ada46b79860505f970a6,
+        type: 3}
+      propertyPath: pullSpeed
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6717404289266518619, guid: c2e6df53dba1ada46b79860505f970a6,
         type: 3}
@@ -26497,6 +26512,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 343044857295344333, guid: 577626b52af925144a25385ffe86a192,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 59.69995
+      objectReference: {fileID: 0}
     - target: {fileID: 343044855646105400, guid: 577626b52af925144a25385ffe86a192,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -26506,11 +26526,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 343044857295344333, guid: 577626b52af925144a25385ffe86a192,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 59.69995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 577626b52af925144a25385ffe86a192, type: 3}
